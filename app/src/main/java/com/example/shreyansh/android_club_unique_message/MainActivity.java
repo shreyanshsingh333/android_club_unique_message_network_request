@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -15,8 +16,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    String Android_club_server_url;
+    EditText mac;
+    TextView your_mac,clickToChangeMac;
+    String Android_club_server_url,macAdd;
+    LinearLayout changeMacView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,37 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        mac = findViewById(R.id.mac_display);
+        mac.setText("c8:25:e1:20:9c:a2");
+        macAdd = mac.getText().toString();
+
+        your_mac = findViewById(R.id.your_mac);
+        your_mac.setText(macAdd);
+
+        changeMacView = findViewById(R.id.change_mac_view);
+        changeMacView.setVisibility(View.GONE);
+        your_mac.setVisibility(View.VISIBLE);
+
+        clickToChangeMac = findViewById(R.id.clickToChangeMac);
+        clickToChangeMac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeMacView.setVisibility(View.VISIBLE);
+                your_mac.setVisibility(View.GONE);
+            }
+        });
+
+        Button macChange = findViewById(R.id.mac_change);
+        macChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                macAdd=mac.getText().toString();
+                your_mac.setText(macAdd);
+                changeMacView.setVisibility(View.GONE);
+                your_mac.setVisibility(View.VISIBLE);
+
+            }
+        });
 
         Button send = findViewById(R.id.send);
         send.setOnClickListener(new View.OnClickListener() {
@@ -36,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 Android_club_server_url = "https://android-club-project.herokuapp.com/upload_details?";
                 Android_club_server_url += "reg_no=";
                 Android_club_server_url += reg_no;
-                Android_club_server_url += "&mac=c8:25:e1:20:9c:a2";
-
+                Android_club_server_url += "&mac=";
+                Android_club_server_url += macAdd;
 
                 //Performing HTTP request
                 new ClubServerAsyncTask().execute(Android_club_server_url);

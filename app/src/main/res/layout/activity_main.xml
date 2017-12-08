@@ -5,31 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.shreyansh.android_club_unique_message.MainActivity">
+    tools:context="com.example.shreyansh.android_club_unique_message.MainActivity"
+    android:background="#a9a9a9">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UniqueMessageGenerator"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:padding="15dp"/>
+
+
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="Enter last 4 digits of your Reg No"
+        android:paddingTop="40dp"
+        android:paddingLeft="40dp"
+        android:background="#404144"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#404144"
+        android:paddingBottom="50dp">
+
 
         <EditText
             android:id="@+id/reg_no"
-            android:layout_width="200dp"
-            android:hint="Enter last 4 digits of your Reg No"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="60dp"
-            android:paddingLeft="10dp"
-            android:layout_marginTop="150dp"
-            />
-
+            android:layout_width="179dp"
+            android:layout_height="64dp"
+            android:textStyle="italic|bold"
+            android:textSize="25dp"
+            android:textColor="#b20808"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:hint="Reg No"
+            android:paddingLeft="10dp" />
 
 
         <Button
             android:id="@+id/send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send"
-            android:layout_marginTop="150dp"
-            />
+            android:layout_width="133dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:padding="0dp"
+            android:text="Generate" />
 
 
     </LinearLayout>
@@ -39,26 +64,81 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:text="Your mac : "/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/change_mac_view">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/mac_display"
+                    />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change"
+                    android:layout_marginLeft="25dp"
+                    android:id="@+id/mac_change"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/your_mac"
+                android:paddingLeft="15dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click here to change Mac Address"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:textColor="#000"
+            android:id="@+id/clickToChangeMac"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Your Unique Message"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="50dp"
             />
+
         <TextView
             android:id="@+id/display"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="40dp"
-            />
-
-
-
-
+            android:layout_width="264dp"
+            android:layout_height="77dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="30dp"
+            android:textSize="20dp"
+            android:textStyle="bold|italic"
+            android:textColor="#000"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="here"
+        android:layout_marginTop="100dp"/>
 
 
 
